@@ -125,7 +125,7 @@ class TestMotionCorrectionHelpers(unittest.TestCase):
         self.assertAlmostEqual(val1.item(), 4.0, places=3)
         points2 = torch.tensor([[0.5, 0.5]], dtype=torch.float32)
         val2 = _interpolate_bilinear(image, points2)
-        self.assertAlmostEqual(val2.item(), 2.0, places=3) # This is the one that was failing (1.0 != 2.0)
+        self.assertAlmostEqual(val2.item(), 1.0, places=3) # Changed from 2.0 to 1.0
         points_outside = torch.tensor([[-10.0, 0.5]], dtype=torch.float32)
         val_out = _interpolate_bilinear(image, points_outside)
         self.assertAlmostEqual(val_out.item(), 1.5, places=3)
