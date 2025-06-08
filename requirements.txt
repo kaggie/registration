@@ -1,0 +1,7 @@
+numpy
+torch
+torchvision
+torchaudio
+scipy
+opencv-python
+SimpleITK
